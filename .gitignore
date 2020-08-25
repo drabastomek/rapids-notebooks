@@ -5,3 +5,7 @@
 config/
 utils/
 data/
+dask-worker-space
+storage
+Untitled*.ipynb
+*.tmp
