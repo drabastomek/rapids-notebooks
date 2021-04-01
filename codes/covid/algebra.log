@@ -1,0 +1,737 @@
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalAggregate(group=[{}], EXPR$0=[COUNT()])
+  LogicalProject($f0=[0])
+    LogicalTableScan(table=[[main, metadata]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalAggregate(group=[{}], EXPR$0=[COUNT()])
+  LogicalProject($f0=[0])
+    BindableTableScan(table=[[main, metadata]], projects=[[]], aliases=[[$f0]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$1], dir0=[DESC], fetch=[10])
+  LogicalAggregate(group=[{0}], cnt=[COUNT()])
+    LogicalProject(source_x=[$2])
+      LogicalTableScan(table=[[main, metadata]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$1], dir0=[DESC], fetch=[10])
+  LogicalAggregate(group=[{0}], cnt=[COUNT()])
+    BindableTableScan(table=[[main, metadata]], projects=[[2]], aliases=[[source_x]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$1], dir0=[DESC], fetch=[10])
+  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+    LogicalProject(journal=[$11])
+      LogicalFilter(condition=[IS NOT NULL($11)])
+        LogicalTableScan(table=[[main, metadata]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$1], dir0=[DESC], fetch=[10])
+  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+    BindableTableScan(table=[[main, metadata]], filters=[[IS NOT NULL($0)]], projects=[[11]], aliases=[[journal]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[CAST(SUBSTRING($9, 1, 4)):INTEGER])
+  LogicalTableScan(table=[[main, metadata]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[CAST(SUBSTRING($9, 1, 4)):INTEGER])
+  BindableTableScan(table=[[main, metadata]], aliases=[[cord_uid, sha, source_x, title, doi, pmcid, pubmed_id, license, abstract, publish_time, authors, journal, mag_id, who_covidence_id, arxiv_id, pdf_json_files, pmc_json_files, url, s2_id, year_published]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$0], dir0=[ASC])
+  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+    LogicalProject(year_published=[$19])
+      LogicalFilter(condition=[<($19, 2020)])
+        LogicalTableScan(table=[[main, metadata]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$0], dir0=[ASC])
+  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+    BindableTableScan(table=[[main, metadata]], filters=[[<($0, 2020)]], projects=[[19]], aliases=[[year_published]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[$19], prior_2020=[CASE(<($19, 2020), 1, 0)])
+  LogicalTableScan(table=[[main, metadata]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[$19], prior_2020=[CASE(<($19, 2020), 1, 0)])
+  BindableTableScan(table=[[main, metadata]], aliases=[[cord_uid, sha, source_x, title, doi, pmcid, pubmed_id, license, abstract, publish_time, authors, journal, mag_id, who_covidence_id, arxiv_id, pdf_json_files, pmc_json_files, url, s2_id, year_published, prior_2020]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$0], dir0=[ASC])
+  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+    LogicalProject(prior_2020=[$20])
+      LogicalTableScan(table=[[main, metadata]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$0], dir0=[ASC])
+  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+    BindableTableScan(table=[[main, metadata]], projects=[[20]], aliases=[[prior_2020]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(source_x_miss=[CASE(IS NULL($2), 1, 0)], title_miss=[CASE(IS NULL($3), 1, 0)], doi_miss=[CASE(IS NULL($4), 1, 0)], pmcid_miss=[CASE(IS NULL($5), 1, 0)], pubmed_id_miss=[CASE(IS NULL($6), 1, 0)], license_miss=[CASE(IS NULL($7), 1, 0)], abstract_miss=[CASE(IS NULL($8), 1, 0)], publish_time_miss=[CASE(IS NULL($9), 1, 0)], authors_miss=[CASE(IS NULL($10), 1, 0)], journal_miss=[CASE(IS NULL($11), 1, 0)], mag_id_miss=[CASE(IS NULL($12), 1, 0)], who_covidence_id_miss=[CASE(IS NULL($13), 1, 0)], arxiv_id_miss=[CASE(IS NULL($14), 1, 0)], pdf_json_files_miss=[CASE(IS NULL($15), 1, 0)], pmc_json_files_miss=[CASE(IS NULL($16), 1, 0)], url_miss=[CASE(IS NULL($17), 1, 0)])
+  LogicalTableScan(table=[[main, metadata]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(source_x_miss=[CASE(IS NULL($0), 1, 0)], title_miss=[CASE(IS NULL($1), 1, 0)], doi_miss=[CASE(IS NULL($2), 1, 0)], pmcid_miss=[CASE(IS NULL($3), 1, 0)], pubmed_id_miss=[CASE(IS NULL($4), 1, 0)], license_miss=[CASE(IS NULL($5), 1, 0)], abstract_miss=[CASE(IS NULL($6), 1, 0)], publish_time_miss=[CASE(IS NULL($7), 1, 0)], authors_miss=[CASE(IS NULL($8), 1, 0)], journal_miss=[CASE(IS NULL($9), 1, 0)], mag_id_miss=[CASE(IS NULL($10), 1, 0)], who_covidence_id_miss=[CASE(IS NULL($11), 1, 0)], arxiv_id_miss=[CASE(IS NULL($12), 1, 0)], pdf_json_files_miss=[CASE(IS NULL($13), 1, 0)], pmc_json_files_miss=[CASE(IS NULL($14), 1, 0)], url_miss=[CASE(IS NULL($15), 1, 0)])
+  BindableTableScan(table=[[main, metadata]], projects=[[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]], aliases=[[source_x_miss, title_miss, doi_miss, pmcid_miss, pubmed_id_miss, license_miss, abstract_miss, publish_time_miss, authors_miss, journal_miss, mag_id_miss, who_covidence_id_miss, arxiv_id_miss, pdf_json_files_miss, pmc_json_files_miss, url_miss]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalUnion(all=[true])
+  LogicalUnion(all=[true])
+    LogicalUnion(all=[true])
+      LogicalUnion(all=[true])
+        LogicalUnion(all=[true])
+          LogicalUnion(all=[true])
+            LogicalUnion(all=[true])
+              LogicalUnion(all=[true])
+                LogicalUnion(all=[true])
+                  LogicalUnion(all=[true])
+                    LogicalUnion(all=[true])
+                      LogicalUnion(all=[true])
+                        LogicalUnion(all=[true])
+                          LogicalUnion(all=[true])
+                            LogicalUnion(all=[true])
+                              LogicalProject(miss_flag=['source_x_miss'], FLAG=[$0], CNT=[$1])
+                                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                  LogicalProject(FLAG=[$0])
+                                    LogicalTableScan(table=[[main, missing_flags]])
+                              LogicalProject(miss_flag=['title_miss'], FLAG=[$0], CNT=[$1])
+                                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                  LogicalProject(FLAG=[$1])
+                                    LogicalTableScan(table=[[main, missing_flags]])
+                            LogicalProject(miss_flag=['doi_miss'], FLAG=[$0], CNT=[$1])
+                              LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                LogicalProject(FLAG=[$2])
+                                  LogicalTableScan(table=[[main, missing_flags]])
+                          LogicalProject(miss_flag=['pmcid_miss'], FLAG=[$0], CNT=[$1])
+                            LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                              LogicalProject(FLAG=[$3])
+                                LogicalTableScan(table=[[main, missing_flags]])
+                        LogicalProject(miss_flag=['pubmed_id_miss'], FLAG=[$0], CNT=[$1])
+                          LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                            LogicalProject(FLAG=[$4])
+                              LogicalTableScan(table=[[main, missing_flags]])
+                      LogicalProject(miss_flag=['license_miss'], FLAG=[$0], CNT=[$1])
+                        LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                          LogicalProject(FLAG=[$5])
+                            LogicalTableScan(table=[[main, missing_flags]])
+                    LogicalProject(miss_flag=['abstract_miss'], FLAG=[$0], CNT=[$1])
+                      LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                        LogicalProject(FLAG=[$6])
+                          LogicalTableScan(table=[[main, missing_flags]])
+                  LogicalProject(miss_flag=['publish_time_miss'], FLAG=[$0], CNT=[$1])
+                    LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                      LogicalProject(FLAG=[$7])
+                        LogicalTableScan(table=[[main, missing_flags]])
+                LogicalProject(miss_flag=['authors_miss'], FLAG=[$0], CNT=[$1])
+                  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                    LogicalProject(FLAG=[$8])
+                      LogicalTableScan(table=[[main, missing_flags]])
+              LogicalProject(miss_flag=['journal_miss'], FLAG=[$0], CNT=[$1])
+                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                  LogicalProject(FLAG=[$9])
+                    LogicalTableScan(table=[[main, missing_flags]])
+            LogicalProject(miss_flag=['mag_id_miss'], FLAG=[$0], CNT=[$1])
+              LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                LogicalProject(FLAG=[$10])
+                  LogicalTableScan(table=[[main, missing_flags]])
+          LogicalProject(miss_flag=['who_covidence_id_miss'], FLAG=[$0], CNT=[$1])
+            LogicalAggregate(group=[{0}], CNT=[COUNT()])
+              LogicalProject(FLAG=[$11])
+                LogicalTableScan(table=[[main, missing_flags]])
+        LogicalProject(miss_flag=['arxiv_id_miss'], FLAG=[$0], CNT=[$1])
+          LogicalAggregate(group=[{0}], CNT=[COUNT()])
+            LogicalProject(FLAG=[$12])
+              LogicalTableScan(table=[[main, missing_flags]])
+      LogicalProject(miss_flag=['pdf_json_files_miss'], FLAG=[$0], CNT=[$1])
+        LogicalAggregate(group=[{0}], CNT=[COUNT()])
+          LogicalProject(FLAG=[$13])
+            LogicalTableScan(table=[[main, missing_flags]])
+    LogicalProject(miss_flag=['pmc_json_files_miss'], FLAG=[$0], CNT=[$1])
+      LogicalAggregate(group=[{0}], CNT=[COUNT()])
+        LogicalProject(FLAG=[$14])
+          LogicalTableScan(table=[[main, missing_flags]])
+  LogicalProject(miss_flag=['url_miss'], FLAG=[$0], CNT=[$1])
+    LogicalAggregate(group=[{0}], CNT=[COUNT()])
+      LogicalProject(FLAG=[$15])
+        LogicalTableScan(table=[[main, missing_flags]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalUnion(all=[true])
+  LogicalUnion(all=[true])
+    LogicalUnion(all=[true])
+      LogicalUnion(all=[true])
+        LogicalUnion(all=[true])
+          LogicalUnion(all=[true])
+            LogicalUnion(all=[true])
+              LogicalUnion(all=[true])
+                LogicalUnion(all=[true])
+                  LogicalUnion(all=[true])
+                    LogicalUnion(all=[true])
+                      LogicalUnion(all=[true])
+                        LogicalUnion(all=[true])
+                          LogicalUnion(all=[true])
+                            LogicalUnion(all=[true])
+                              LogicalProject(miss_flag=['source_x_miss'], FLAG=[$0], CNT=[$1])
+                                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                  BindableTableScan(table=[[main, missing_flags]], projects=[[0]], aliases=[[FLAG]])
+                              LogicalProject(miss_flag=['title_miss'], FLAG=[$0], CNT=[$1])
+                                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                  BindableTableScan(table=[[main, missing_flags]], projects=[[1]], aliases=[[FLAG]])
+                            LogicalProject(miss_flag=['doi_miss'], FLAG=[$0], CNT=[$1])
+                              LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                BindableTableScan(table=[[main, missing_flags]], projects=[[2]], aliases=[[FLAG]])
+                          LogicalProject(miss_flag=['pmcid_miss'], FLAG=[$0], CNT=[$1])
+                            LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                              BindableTableScan(table=[[main, missing_flags]], projects=[[3]], aliases=[[FLAG]])
+                        LogicalProject(miss_flag=['pubmed_id_miss'], FLAG=[$0], CNT=[$1])
+                          LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                            BindableTableScan(table=[[main, missing_flags]], projects=[[4]], aliases=[[FLAG]])
+                      LogicalProject(miss_flag=['license_miss'], FLAG=[$0], CNT=[$1])
+                        LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                          BindableTableScan(table=[[main, missing_flags]], projects=[[5]], aliases=[[FLAG]])
+                    LogicalProject(miss_flag=['abstract_miss'], FLAG=[$0], CNT=[$1])
+                      LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                        BindableTableScan(table=[[main, missing_flags]], projects=[[6]], aliases=[[FLAG]])
+                  LogicalProject(miss_flag=['publish_time_miss'], FLAG=[$0], CNT=[$1])
+                    LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                      BindableTableScan(table=[[main, missing_flags]], projects=[[7]], aliases=[[FLAG]])
+                LogicalProject(miss_flag=['authors_miss'], FLAG=[$0], CNT=[$1])
+                  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                    BindableTableScan(table=[[main, missing_flags]], projects=[[8]], aliases=[[FLAG]])
+              LogicalProject(miss_flag=['journal_miss'], FLAG=[$0], CNT=[$1])
+                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                  BindableTableScan(table=[[main, missing_flags]], projects=[[9]], aliases=[[FLAG]])
+            LogicalProject(miss_flag=['mag_id_miss'], FLAG=[$0], CNT=[$1])
+              LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                BindableTableScan(table=[[main, missing_flags]], projects=[[10]], aliases=[[FLAG]])
+          LogicalProject(miss_flag=['who_covidence_id_miss'], FLAG=[$0], CNT=[$1])
+            LogicalAggregate(group=[{0}], CNT=[COUNT()])
+              BindableTableScan(table=[[main, missing_flags]], projects=[[11]], aliases=[[FLAG]])
+        LogicalProject(miss_flag=['arxiv_id_miss'], FLAG=[$0], CNT=[$1])
+          LogicalAggregate(group=[{0}], CNT=[COUNT()])
+            BindableTableScan(table=[[main, missing_flags]], projects=[[12]], aliases=[[FLAG]])
+      LogicalProject(miss_flag=['pdf_json_files_miss'], FLAG=[$0], CNT=[$1])
+        LogicalAggregate(group=[{0}], CNT=[COUNT()])
+          BindableTableScan(table=[[main, missing_flags]], projects=[[13]], aliases=[[FLAG]])
+    LogicalProject(miss_flag=['pmc_json_files_miss'], FLAG=[$0], CNT=[$1])
+      LogicalAggregate(group=[{0}], CNT=[COUNT()])
+        BindableTableScan(table=[[main, missing_flags]], projects=[[14]], aliases=[[FLAG]])
+  LogicalProject(miss_flag=['url_miss'], FLAG=[$0], CNT=[$1])
+    LogicalAggregate(group=[{0}], CNT=[COUNT()])
+      BindableTableScan(table=[[main, missing_flags]], projects=[[15]], aliases=[[FLAG]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$3], dir0=[DESC])
+  LogicalProject(miss_flag=[$0], FLAG=[$1], CNT=[$2], MISS_PCNT=[*(/($2, 233539.0:DECIMAL(7, 1)), 100.0:DECIMAL(4, 1))])
+    LogicalFilter(condition=[=(CAST($1):INTEGER, 1)])
+      LogicalTableScan(table=[[main, missing_summary]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$3], dir0=[DESC])
+  LogicalProject(miss_flag=[$0], FLAG=[CAST(1:TINYINT):TINYINT], CNT=[$2], MISS_PCNT=[*(/($2, 233539.0:DECIMAL(7, 1)), 100.0:DECIMAL(4, 1))])
+    BindableTableScan(table=[[main, missing_summary]], filters=[[=(CAST($1):INTEGER, 1)]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[$19], prior_2020=[$20])
+  LogicalFilter(condition=[IS NOT NULL($15)])
+    LogicalTableScan(table=[[main, metadata]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+BindableTableScan(table=[[main, metadata]], filters=[[IS NOT NULL($15)]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalAggregate(group=[{}], EXPR$0=[COUNT()])
+  LogicalProject($f0=[0])
+    LogicalTableScan(table=[[main, metadata_no_missing]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalAggregate(group=[{}], EXPR$0=[COUNT()])
+  LogicalProject($f0=[0])
+    BindableTableScan(table=[[main, metadata_no_missing]], projects=[[]], aliases=[[$f0]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(source_x_miss=[CASE(IS NULL($2), 1, 0)], title_miss=[CASE(IS NULL($3), 1, 0)], doi_miss=[CASE(IS NULL($4), 1, 0)], pmcid_miss=[CASE(IS NULL($5), 1, 0)], pubmed_id_miss=[CASE(IS NULL($6), 1, 0)], license_miss=[CASE(IS NULL($7), 1, 0)], abstract_miss=[CASE(IS NULL($8), 1, 0)], publish_time_miss=[CASE(IS NULL($9), 1, 0)], authors_miss=[CASE(IS NULL($10), 1, 0)], journal_miss=[CASE(IS NULL($11), 1, 0)], mag_id_miss=[CASE(IS NULL($12), 1, 0)], who_covidence_id_miss=[CASE(IS NULL($13), 1, 0)], arxiv_id_miss=[CASE(IS NULL($14), 1, 0)], pdf_json_files_miss=[CASE(IS NULL($15), 1, 0)], pmc_json_files_miss=[CASE(IS NULL($16), 1, 0)], url_miss=[CASE(IS NULL($17), 1, 0)])
+  LogicalTableScan(table=[[main, metadata_no_missing]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(source_x_miss=[CASE(IS NULL($0), 1, 0)], title_miss=[CASE(IS NULL($1), 1, 0)], doi_miss=[CASE(IS NULL($2), 1, 0)], pmcid_miss=[CASE(IS NULL($3), 1, 0)], pubmed_id_miss=[CASE(IS NULL($4), 1, 0)], license_miss=[CASE(IS NULL($5), 1, 0)], abstract_miss=[CASE(IS NULL($6), 1, 0)], publish_time_miss=[CASE(IS NULL($7), 1, 0)], authors_miss=[CASE(IS NULL($8), 1, 0)], journal_miss=[CASE(IS NULL($9), 1, 0)], mag_id_miss=[CASE(IS NULL($10), 1, 0)], who_covidence_id_miss=[CASE(IS NULL($11), 1, 0)], arxiv_id_miss=[CASE(IS NULL($12), 1, 0)], pdf_json_files_miss=[CASE(IS NULL($13), 1, 0)], pmc_json_files_miss=[CASE(IS NULL($14), 1, 0)], url_miss=[CASE(IS NULL($15), 1, 0)])
+  BindableTableScan(table=[[main, metadata_no_missing]], projects=[[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]], aliases=[[source_x_miss, title_miss, doi_miss, pmcid_miss, pubmed_id_miss, license_miss, abstract_miss, publish_time_miss, authors_miss, journal_miss, mag_id_miss, who_covidence_id_miss, arxiv_id_miss, pdf_json_files_miss, pmc_json_files_miss, url_miss]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalUnion(all=[true])
+  LogicalUnion(all=[true])
+    LogicalUnion(all=[true])
+      LogicalUnion(all=[true])
+        LogicalUnion(all=[true])
+          LogicalUnion(all=[true])
+            LogicalUnion(all=[true])
+              LogicalUnion(all=[true])
+                LogicalUnion(all=[true])
+                  LogicalUnion(all=[true])
+                    LogicalUnion(all=[true])
+                      LogicalUnion(all=[true])
+                        LogicalUnion(all=[true])
+                          LogicalUnion(all=[true])
+                            LogicalUnion(all=[true])
+                              LogicalProject(miss_flag=['source_x_miss'], FLAG=[$0], CNT=[$1])
+                                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                  LogicalProject(FLAG=[$0])
+                                    LogicalTableScan(table=[[main, missing_flags]])
+                              LogicalProject(miss_flag=['title_miss'], FLAG=[$0], CNT=[$1])
+                                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                  LogicalProject(FLAG=[$1])
+                                    LogicalTableScan(table=[[main, missing_flags]])
+                            LogicalProject(miss_flag=['doi_miss'], FLAG=[$0], CNT=[$1])
+                              LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                LogicalProject(FLAG=[$2])
+                                  LogicalTableScan(table=[[main, missing_flags]])
+                          LogicalProject(miss_flag=['pmcid_miss'], FLAG=[$0], CNT=[$1])
+                            LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                              LogicalProject(FLAG=[$3])
+                                LogicalTableScan(table=[[main, missing_flags]])
+                        LogicalProject(miss_flag=['pubmed_id_miss'], FLAG=[$0], CNT=[$1])
+                          LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                            LogicalProject(FLAG=[$4])
+                              LogicalTableScan(table=[[main, missing_flags]])
+                      LogicalProject(miss_flag=['license_miss'], FLAG=[$0], CNT=[$1])
+                        LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                          LogicalProject(FLAG=[$5])
+                            LogicalTableScan(table=[[main, missing_flags]])
+                    LogicalProject(miss_flag=['abstract_miss'], FLAG=[$0], CNT=[$1])
+                      LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                        LogicalProject(FLAG=[$6])
+                          LogicalTableScan(table=[[main, missing_flags]])
+                  LogicalProject(miss_flag=['publish_time_miss'], FLAG=[$0], CNT=[$1])
+                    LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                      LogicalProject(FLAG=[$7])
+                        LogicalTableScan(table=[[main, missing_flags]])
+                LogicalProject(miss_flag=['authors_miss'], FLAG=[$0], CNT=[$1])
+                  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                    LogicalProject(FLAG=[$8])
+                      LogicalTableScan(table=[[main, missing_flags]])
+              LogicalProject(miss_flag=['journal_miss'], FLAG=[$0], CNT=[$1])
+                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                  LogicalProject(FLAG=[$9])
+                    LogicalTableScan(table=[[main, missing_flags]])
+            LogicalProject(miss_flag=['mag_id_miss'], FLAG=[$0], CNT=[$1])
+              LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                LogicalProject(FLAG=[$10])
+                  LogicalTableScan(table=[[main, missing_flags]])
+          LogicalProject(miss_flag=['who_covidence_id_miss'], FLAG=[$0], CNT=[$1])
+            LogicalAggregate(group=[{0}], CNT=[COUNT()])
+              LogicalProject(FLAG=[$11])
+                LogicalTableScan(table=[[main, missing_flags]])
+        LogicalProject(miss_flag=['arxiv_id_miss'], FLAG=[$0], CNT=[$1])
+          LogicalAggregate(group=[{0}], CNT=[COUNT()])
+            LogicalProject(FLAG=[$12])
+              LogicalTableScan(table=[[main, missing_flags]])
+      LogicalProject(miss_flag=['pdf_json_files_miss'], FLAG=[$0], CNT=[$1])
+        LogicalAggregate(group=[{0}], CNT=[COUNT()])
+          LogicalProject(FLAG=[$13])
+            LogicalTableScan(table=[[main, missing_flags]])
+    LogicalProject(miss_flag=['pmc_json_files_miss'], FLAG=[$0], CNT=[$1])
+      LogicalAggregate(group=[{0}], CNT=[COUNT()])
+        LogicalProject(FLAG=[$14])
+          LogicalTableScan(table=[[main, missing_flags]])
+  LogicalProject(miss_flag=['url_miss'], FLAG=[$0], CNT=[$1])
+    LogicalAggregate(group=[{0}], CNT=[COUNT()])
+      LogicalProject(FLAG=[$15])
+        LogicalTableScan(table=[[main, missing_flags]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalUnion(all=[true])
+  LogicalUnion(all=[true])
+    LogicalUnion(all=[true])
+      LogicalUnion(all=[true])
+        LogicalUnion(all=[true])
+          LogicalUnion(all=[true])
+            LogicalUnion(all=[true])
+              LogicalUnion(all=[true])
+                LogicalUnion(all=[true])
+                  LogicalUnion(all=[true])
+                    LogicalUnion(all=[true])
+                      LogicalUnion(all=[true])
+                        LogicalUnion(all=[true])
+                          LogicalUnion(all=[true])
+                            LogicalUnion(all=[true])
+                              LogicalProject(miss_flag=['source_x_miss'], FLAG=[$0], CNT=[$1])
+                                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                  BindableTableScan(table=[[main, missing_flags]], projects=[[0]], aliases=[[FLAG]])
+                              LogicalProject(miss_flag=['title_miss'], FLAG=[$0], CNT=[$1])
+                                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                  BindableTableScan(table=[[main, missing_flags]], projects=[[1]], aliases=[[FLAG]])
+                            LogicalProject(miss_flag=['doi_miss'], FLAG=[$0], CNT=[$1])
+                              LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                                BindableTableScan(table=[[main, missing_flags]], projects=[[2]], aliases=[[FLAG]])
+                          LogicalProject(miss_flag=['pmcid_miss'], FLAG=[$0], CNT=[$1])
+                            LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                              BindableTableScan(table=[[main, missing_flags]], projects=[[3]], aliases=[[FLAG]])
+                        LogicalProject(miss_flag=['pubmed_id_miss'], FLAG=[$0], CNT=[$1])
+                          LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                            BindableTableScan(table=[[main, missing_flags]], projects=[[4]], aliases=[[FLAG]])
+                      LogicalProject(miss_flag=['license_miss'], FLAG=[$0], CNT=[$1])
+                        LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                          BindableTableScan(table=[[main, missing_flags]], projects=[[5]], aliases=[[FLAG]])
+                    LogicalProject(miss_flag=['abstract_miss'], FLAG=[$0], CNT=[$1])
+                      LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                        BindableTableScan(table=[[main, missing_flags]], projects=[[6]], aliases=[[FLAG]])
+                  LogicalProject(miss_flag=['publish_time_miss'], FLAG=[$0], CNT=[$1])
+                    LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                      BindableTableScan(table=[[main, missing_flags]], projects=[[7]], aliases=[[FLAG]])
+                LogicalProject(miss_flag=['authors_miss'], FLAG=[$0], CNT=[$1])
+                  LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                    BindableTableScan(table=[[main, missing_flags]], projects=[[8]], aliases=[[FLAG]])
+              LogicalProject(miss_flag=['journal_miss'], FLAG=[$0], CNT=[$1])
+                LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                  BindableTableScan(table=[[main, missing_flags]], projects=[[9]], aliases=[[FLAG]])
+            LogicalProject(miss_flag=['mag_id_miss'], FLAG=[$0], CNT=[$1])
+              LogicalAggregate(group=[{0}], CNT=[COUNT()])
+                BindableTableScan(table=[[main, missing_flags]], projects=[[10]], aliases=[[FLAG]])
+          LogicalProject(miss_flag=['who_covidence_id_miss'], FLAG=[$0], CNT=[$1])
+            LogicalAggregate(group=[{0}], CNT=[COUNT()])
+              BindableTableScan(table=[[main, missing_flags]], projects=[[11]], aliases=[[FLAG]])
+        LogicalProject(miss_flag=['arxiv_id_miss'], FLAG=[$0], CNT=[$1])
+          LogicalAggregate(group=[{0}], CNT=[COUNT()])
+            BindableTableScan(table=[[main, missing_flags]], projects=[[12]], aliases=[[FLAG]])
+      LogicalProject(miss_flag=['pdf_json_files_miss'], FLAG=[$0], CNT=[$1])
+        LogicalAggregate(group=[{0}], CNT=[COUNT()])
+          BindableTableScan(table=[[main, missing_flags]], projects=[[13]], aliases=[[FLAG]])
+    LogicalProject(miss_flag=['pmc_json_files_miss'], FLAG=[$0], CNT=[$1])
+      LogicalAggregate(group=[{0}], CNT=[COUNT()])
+        BindableTableScan(table=[[main, missing_flags]], projects=[[14]], aliases=[[FLAG]])
+  LogicalProject(miss_flag=['url_miss'], FLAG=[$0], CNT=[$1])
+    LogicalAggregate(group=[{0}], CNT=[COUNT()])
+      BindableTableScan(table=[[main, missing_flags]], projects=[[15]], aliases=[[FLAG]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$3], dir0=[DESC])
+  LogicalProject(miss_flag=[$0], FLAG=[$1], CNT=[$2], MISS_PCNT=[*(/($2, 233539.0:DECIMAL(7, 1)), 100.0:DECIMAL(4, 1))])
+    LogicalFilter(condition=[=(CAST($1):INTEGER, 1)])
+      LogicalTableScan(table=[[main, missing_summary]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$3], dir0=[DESC])
+  LogicalProject(miss_flag=[$0], FLAG=[CAST(1:TINYINT):TINYINT], CNT=[$2], MISS_PCNT=[*(/($2, 233539.0:DECIMAL(7, 1)), 100.0:DECIMAL(4, 1))])
+    BindableTableScan(table=[[main, missing_summary]], filters=[[=(CAST($1):INTEGER, 1)]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(CNT=[$0], url_DIST=[$1], url_MISS=[$2], url_TTL=[+($1, $2)], url_DUPES=[-(-($0, $1), $2)], title_DIST=[$3], title_MISS=[$4], title_TTL=[+($3, $4)], title_DUPES=[-(-($0, $3), $4)], doi_DIST=[$5], doi_MISS=[$6], doi_TTL=[+($5, $6)], doi_DUPES=[-(-($0, $5), $6)], abstract_DIST=[$7], abstract_MISS=[$8], abstract_TTL=[+($7, $8)], abstract_DUPES=[-(-($0, $7), $8)], pdf_json_files_DIST=[$9], pdf_json_files_MISS=[$10], pdf_json_files_TTL=[+($9, $10)], pdf_json_files_DUPES=[-(-($0, $9), $10)], pmc_json_files_DIST=[$11], pmc_json_files_MISS=[$12], pmc_json_files_TTL=[+($11, $12)], pmc_json_files_DUPES=[-(-($0, $11), $12)])
+  LogicalAggregate(group=[{}], CNT=[COUNT()], url_DIST=[COUNT(DISTINCT $0)], url_MISS=[SUM($1)], title_DIST=[COUNT(DISTINCT $2)], title_MISS=[SUM($3)], doi_DIST=[COUNT(DISTINCT $4)], doi_MISS=[SUM($5)], abstract_DIST=[COUNT(DISTINCT $6)], abstract_MISS=[SUM($7)], pdf_json_files_DIST=[COUNT(DISTINCT $8)], pdf_json_files_MISS=[SUM($9)], pmc_json_files_DIST=[COUNT(DISTINCT $10)], pmc_json_files_MISS=[SUM($11)])
+    LogicalProject(url=[$17], $f1=[CASE(IS NULL($17), 1, 0)], title=[$3], $f3=[CASE(IS NULL($3), 1, 0)], doi=[$4], $f5=[CASE(IS NULL($4), 1, 0)], abstract=[$8], $f7=[CASE(IS NULL($8), 1, 0)], pdf_json_files=[$15], $f9=[CASE(IS NULL($15), 1, 0)], pmc_json_files=[$16], $f11=[CASE(IS NULL($16), 1, 0)])
+      LogicalTableScan(table=[[main, metadata_no_missing]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(CNT=[$0], url_DIST=[$7], url_MISS=[$1], url_TTL=[$12], url_DUPES=[$13], title_DIST=[$8], title_MISS=[$2], title_TTL=[$14], title_DUPES=[$15], doi_DIST=[$9], doi_MISS=[$3], doi_TTL=[$16], doi_DUPES=[$17], abstract_DIST=[$10], abstract_MISS=[$4], abstract_TTL=[$18], abstract_DUPES=[$19], pdf_json_files_DIST=[$11], pdf_json_files_MISS=[$5], pdf_json_files_TTL=[$20], pdf_json_files_DUPES=[$21], pmc_json_files_DIST=[$22], pmc_json_files_MISS=[$6], pmc_json_files_TTL=[+($22, $6)], pmc_json_files_DUPES=[-(-($0, $22), $6)])
+  LogicalJoin(condition=[true], joinType=[inner])
+    LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], title_DIST=[$8], doi_DIST=[$9], abstract_DIST=[$10], pdf_json_files_DIST=[$19], +=[$11], -=[$12], +14=[$13], -15=[$14], +16=[$15], -17=[$16], +18=[$17], -19=[$18], +20=[+($19, $5)], -21=[-(-($0, $19), $5)])
+      LogicalJoin(condition=[true], joinType=[inner])
+        LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], title_DIST=[$8], doi_DIST=[$9], abstract_DIST=[$16], +=[$10], -=[$11], +13=[$12], -14=[$13], +15=[$14], -16=[$15], +17=[+($16, $4)], -18=[-(-($0, $16), $4)])
+          LogicalJoin(condition=[true], joinType=[inner])
+            LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], title_DIST=[$8], doi_DIST=[$13], +=[$9], -=[$10], +12=[$11], -13=[$12], +14=[+($13, $3)], -15=[-(-($0, $13), $3)])
+              LogicalJoin(condition=[true], joinType=[inner])
+                LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], title_DIST=[$10], +=[$8], -=[$9], +11=[+($10, $2)], -12=[-(-($0, $10), $2)])
+                  LogicalJoin(condition=[true], joinType=[inner])
+                    LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], +=[+($7, $1)], -=[-(-($0, $7), $1)])
+                      LogicalJoin(condition=[true], joinType=[inner])
+                        LogicalProject(CNT=[$0], url_MISS=[CASE(=($0, 0), null:INTEGER, $1)], title_MISS=[CASE(=($0, 0), null:INTEGER, $2)], doi_MISS=[CASE(=($0, 0), null:INTEGER, $3)], abstract_MISS=[CASE(=($0, 0), null:INTEGER, $4)], pdf_json_files_MISS=[CASE(=($0, 0), null:INTEGER, $5)], pmc_json_files_MISS=[CASE(=($0, 0), null:INTEGER, $6)])
+                          LogicalAggregate(group=[{}], CNT=[COUNT()], url_MISS=[$SUM0($1)], title_MISS=[$SUM0($3)], doi_MISS=[$SUM0($5)], abstract_MISS=[$SUM0($7)], pdf_json_files_MISS=[$SUM0($9)], pmc_json_files_MISS=[$SUM0($11)])
+                            LogicalProject(url=[$0], $f1=[CASE(IS NULL($0), 1, 0)], title=[$1], $f3=[CASE(IS NULL($1), 1, 0)], doi=[$2], $f5=[CASE(IS NULL($2), 1, 0)], abstract=[$3], $f7=[CASE(IS NULL($3), 1, 0)], pdf_json_files=[$4], $f9=[CASE(IS NULL($4), 1, 0)], pmc_json_files=[$5], $f11=[CASE(IS NULL($5), 1, 0)])
+                              BindableTableScan(table=[[main, metadata_no_missing]], projects=[[17, 3, 4, 8, 15, 16]], aliases=[[url, $f1, title, $f3, doi, $f5, abstract, $f7, pdf_json_files, $f9, pmc_json_files, $f11]])
+                        LogicalAggregate(group=[{}], url_DIST=[COUNT($0)])
+                          LogicalAggregate(group=[{0}])
+                            BindableTableScan(table=[[main, metadata_no_missing]], projects=[[17]], aliases=[[url]])
+                    LogicalAggregate(group=[{}], title_DIST=[COUNT($0)])
+                      LogicalAggregate(group=[{0}])
+                        BindableTableScan(table=[[main, metadata_no_missing]], projects=[[3]], aliases=[[title]])
+                LogicalAggregate(group=[{}], doi_DIST=[COUNT($0)])
+                  LogicalAggregate(group=[{0}])
+                    BindableTableScan(table=[[main, metadata_no_missing]], projects=[[4]], aliases=[[doi]])
+            LogicalAggregate(group=[{}], abstract_DIST=[COUNT($0)])
+              LogicalAggregate(group=[{0}])
+                BindableTableScan(table=[[main, metadata_no_missing]], projects=[[8]], aliases=[[abstract]])
+        LogicalAggregate(group=[{}], pdf_json_files_DIST=[COUNT($0)])
+          LogicalAggregate(group=[{0}])
+            BindableTableScan(table=[[main, metadata_no_missing]], projects=[[15]], aliases=[[pdf_json_files]])
+    LogicalAggregate(group=[{}], pmc_json_files_DIST=[COUNT($0)])
+      LogicalAggregate(group=[{0}])
+        BindableTableScan(table=[[main, metadata_no_missing]], projects=[[16]], aliases=[[pmc_json_files]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(CNT=[$0], url_DIST=[$1], url_MISS=[$2], url_TTL=[+($1, $2)], url_DUPES=[-(-($0, $1), $2)], title_DIST=[$3], title_MISS=[$4], title_TTL=[+($3, $4)], title_DUPES=[-(-($0, $3), $4)], doi_DIST=[$5], doi_MISS=[$6], doi_TTL=[+($5, $6)], doi_DUPES=[-(-($0, $5), $6)], abstract_DIST=[$7], abstract_MISS=[$8], abstract_TTL=[+($7, $8)], abstract_DUPES=[-(-($0, $7), $8)], pdf_json_files_DIST=[$9], pdf_json_files_MISS=[$10], pdf_json_files_TTL=[+($9, $10)], pdf_json_files_DUPES=[-(-($0, $9), $10)], pmc_json_files_DIST=[$11], pmc_json_files_MISS=[$12], pmc_json_files_TTL=[+($11, $12)], pmc_json_files_DUPES=[-(-($0, $11), $12)])
+  LogicalAggregate(group=[{}], CNT=[COUNT()], url_DIST=[COUNT(DISTINCT $0)], url_MISS=[SUM($1)], title_DIST=[COUNT(DISTINCT $2)], title_MISS=[SUM($3)], doi_DIST=[COUNT(DISTINCT $4)], doi_MISS=[SUM($5)], abstract_DIST=[COUNT(DISTINCT $6)], abstract_MISS=[SUM($7)], pdf_json_files_DIST=[COUNT(DISTINCT $8)], pdf_json_files_MISS=[SUM($9)], pmc_json_files_DIST=[COUNT(DISTINCT $10)], pmc_json_files_MISS=[SUM($11)])
+    LogicalProject(url=[$17], $f1=[CASE(IS NULL($17), 1, 0)], title=[$3], $f3=[CASE(IS NULL($3), 1, 0)], doi=[$4], $f5=[CASE(IS NULL($4), 1, 0)], abstract=[$8], $f7=[CASE(IS NULL($8), 1, 0)], pdf_json_files=[$15], $f9=[CASE(IS NULL($15), 1, 0)], pmc_json_files=[$16], $f11=[CASE(IS NULL($16), 1, 0)])
+      LogicalTableScan(table=[[main, metadata_no_missing]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(CNT=[$0], url_DIST=[$7], url_MISS=[$1], url_TTL=[$12], url_DUPES=[$13], title_DIST=[$8], title_MISS=[$2], title_TTL=[$14], title_DUPES=[$15], doi_DIST=[$9], doi_MISS=[$3], doi_TTL=[$16], doi_DUPES=[$17], abstract_DIST=[$10], abstract_MISS=[$4], abstract_TTL=[$18], abstract_DUPES=[$19], pdf_json_files_DIST=[$11], pdf_json_files_MISS=[$5], pdf_json_files_TTL=[$20], pdf_json_files_DUPES=[$21], pmc_json_files_DIST=[$22], pmc_json_files_MISS=[$6], pmc_json_files_TTL=[+($22, $6)], pmc_json_files_DUPES=[-(-($0, $22), $6)])
+  LogicalJoin(condition=[true], joinType=[inner])
+    LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], title_DIST=[$8], doi_DIST=[$9], abstract_DIST=[$10], pdf_json_files_DIST=[$19], +=[$11], -=[$12], +14=[$13], -15=[$14], +16=[$15], -17=[$16], +18=[$17], -19=[$18], +20=[+($19, $5)], -21=[-(-($0, $19), $5)])
+      LogicalJoin(condition=[true], joinType=[inner])
+        LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], title_DIST=[$8], doi_DIST=[$9], abstract_DIST=[$16], +=[$10], -=[$11], +13=[$12], -14=[$13], +15=[$14], -16=[$15], +17=[+($16, $4)], -18=[-(-($0, $16), $4)])
+          LogicalJoin(condition=[true], joinType=[inner])
+            LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], title_DIST=[$8], doi_DIST=[$13], +=[$9], -=[$10], +12=[$11], -13=[$12], +14=[+($13, $3)], -15=[-(-($0, $13), $3)])
+              LogicalJoin(condition=[true], joinType=[inner])
+                LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], title_DIST=[$10], +=[$8], -=[$9], +11=[+($10, $2)], -12=[-(-($0, $10), $2)])
+                  LogicalJoin(condition=[true], joinType=[inner])
+                    LogicalProject(CNT=[$0], url_MISS=[$1], title_MISS=[$2], doi_MISS=[$3], abstract_MISS=[$4], pdf_json_files_MISS=[$5], pmc_json_files_MISS=[$6], url_DIST=[$7], +=[+($7, $1)], -=[-(-($0, $7), $1)])
+                      LogicalJoin(condition=[true], joinType=[inner])
+                        LogicalProject(CNT=[$0], url_MISS=[CASE(=($0, 0), null:INTEGER, $1)], title_MISS=[CASE(=($0, 0), null:INTEGER, $2)], doi_MISS=[CASE(=($0, 0), null:INTEGER, $3)], abstract_MISS=[CASE(=($0, 0), null:INTEGER, $4)], pdf_json_files_MISS=[CASE(=($0, 0), null:INTEGER, $5)], pmc_json_files_MISS=[CASE(=($0, 0), null:INTEGER, $6)])
+                          LogicalAggregate(group=[{}], CNT=[COUNT()], url_MISS=[$SUM0($1)], title_MISS=[$SUM0($3)], doi_MISS=[$SUM0($5)], abstract_MISS=[$SUM0($7)], pdf_json_files_MISS=[$SUM0($9)], pmc_json_files_MISS=[$SUM0($11)])
+                            LogicalProject(url=[$0], $f1=[CASE(IS NULL($0), 1, 0)], title=[$1], $f3=[CASE(IS NULL($1), 1, 0)], doi=[$2], $f5=[CASE(IS NULL($2), 1, 0)], abstract=[$3], $f7=[CASE(IS NULL($3), 1, 0)], pdf_json_files=[$4], $f9=[CASE(IS NULL($4), 1, 0)], pmc_json_files=[$5], $f11=[CASE(IS NULL($5), 1, 0)])
+                              BindableTableScan(table=[[main, metadata_no_missing]], projects=[[17, 3, 4, 8, 15, 16]], aliases=[[url, $f1, title, $f3, doi, $f5, abstract, $f7, pdf_json_files, $f9, pmc_json_files, $f11]])
+                        LogicalAggregate(group=[{}], url_DIST=[COUNT($0)])
+                          LogicalAggregate(group=[{0}])
+                            BindableTableScan(table=[[main, metadata_no_missing]], projects=[[17]], aliases=[[url]])
+                    LogicalAggregate(group=[{}], title_DIST=[COUNT($0)])
+                      LogicalAggregate(group=[{0}])
+                        BindableTableScan(table=[[main, metadata_no_missing]], projects=[[3]], aliases=[[title]])
+                LogicalAggregate(group=[{}], doi_DIST=[COUNT($0)])
+                  LogicalAggregate(group=[{0}])
+                    BindableTableScan(table=[[main, metadata_no_missing]], projects=[[4]], aliases=[[doi]])
+            LogicalAggregate(group=[{}], abstract_DIST=[COUNT($0)])
+              LogicalAggregate(group=[{0}])
+                BindableTableScan(table=[[main, metadata_no_missing]], projects=[[8]], aliases=[[abstract]])
+        LogicalAggregate(group=[{}], pdf_json_files_DIST=[COUNT($0)])
+          LogicalAggregate(group=[{0}])
+            BindableTableScan(table=[[main, metadata_no_missing]], projects=[[15]], aliases=[[pdf_json_files]])
+    LogicalAggregate(group=[{}], pmc_json_files_DIST=[COUNT($0)])
+      LogicalAggregate(group=[{0}])
+        BindableTableScan(table=[[main, metadata_no_missing]], projects=[[16]], aliases=[[pmc_json_files]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(pmc_json_files_DUPES=[$24], pmc_json_files_DUPES0=[$24], pmc_json_files_DUPES1=[$24], pmc_json_files_DUPES2=[$24], pmc_json_files_DUPES3=[$24], pmc_json_files_DUPES4=[$24])
+  LogicalTableScan(table=[[main, duplicates]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(pmc_json_files_DUPES=[$0], pmc_json_files_DUPES0=[$0], pmc_json_files_DUPES1=[$0], pmc_json_files_DUPES2=[$0], pmc_json_files_DUPES3=[$0], pmc_json_files_DUPES4=[$0])
+  BindableTableScan(table=[[main, duplicates]], projects=[[24]], aliases=[[pmc_json_files_DUPES, pmc_json_files_DUPES0, pmc_json_files_DUPES1, pmc_json_files_DUPES2, pmc_json_files_DUPES3, pmc_json_files_DUPES4]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(url_DUPES=[$4], title_DUPES=[$8], doi_DUPES=[$12], abstract_DUPES=[$16], pdf_json_files_DUPES=[$20], pmc_json_files_DUPES=[$24])
+  LogicalTableScan(table=[[main, duplicates]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+BindableTableScan(table=[[main, duplicates]], projects=[[4, 8, 12, 16, 20, 24]], aliases=[[url_DUPES, title_DUPES, doi_DUPES, abstract_DUPES, pdf_json_files_DUPES, pmc_json_files_DUPES]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(url_DUPES=[$4], title_DUPES=[$8], doi_DUPES=[$12], abstract_DUPES=[$16], pdf_json_files_DUPES=[$20], pmc_json_files_DUPES=[$24])
+  LogicalTableScan(table=[[main, duplicates]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+BindableTableScan(table=[[main, duplicates]], projects=[[4, 8, 12, 16, 20, 24]], aliases=[[url_DUPES, title_DUPES, doi_DUPES, abstract_DUPES, pdf_json_files_DUPES, pmc_json_files_DUPES]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(url_DUPES=[$4], title_DUPES=[$8], doi_DUPES=[$12], abstract_DUPES=[$16], pdf_json_files_DUPES=[$20], pmc_json_files_DUPES=[$24])
+  LogicalTableScan(table=[[main, duplicates]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+BindableTableScan(table=[[main, duplicates]], projects=[[4, 8, 12, 16, 20, 24]], aliases=[[url_DUPES, title_DUPES, doi_DUPES, abstract_DUPES, pdf_json_files_DUPES, pmc_json_files_DUPES]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(url_DUPES=[$4], title_DUPES=[$8], doi_DUPES=[$12], abstract_DUPES=[$16], pdf_json_files_DUPES=[$20], pmc_json_files_DUPES=[$24])
+  LogicalTableScan(table=[[main, duplicates]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+BindableTableScan(table=[[main, duplicates]], projects=[[4, 8, 12, 16, 20, 24]], aliases=[[url_DUPES, title_DUPES, doi_DUPES, abstract_DUPES, pdf_json_files_DUPES, pmc_json_files_DUPES]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$15], dir0=[ASC])
+  LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[$19], prior_2020=[$20])
+    LogicalJoin(condition=[=($15, $21)], joinType=[inner])
+      LogicalTableScan(table=[[main, metadata_no_missing]])
+      LogicalProject(pdf_json_files=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            LogicalProject(pdf_json_files=[$15])
+              LogicalTableScan(table=[[main, metadata_no_missing]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$15], dir0=[ASC])
+  LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[$19], prior_2020=[$20])
+    LogicalJoin(condition=[=($15, $21)], joinType=[inner])
+      LogicalTableScan(table=[[main, metadata_no_missing]])
+      LogicalProject(pdf_json_files=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            BindableTableScan(table=[[main, metadata_no_missing]], projects=[[15]], aliases=[[pdf_json_files]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$15], dir0=[ASC])
+  LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[$19], prior_2020=[$20])
+    LogicalJoin(condition=[=($15, $21)], joinType=[inner])
+      LogicalTableScan(table=[[main, metadata_no_missing]])
+      LogicalProject(pdf_json_files=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            LogicalProject(pdf_json_files=[$15])
+              LogicalTableScan(table=[[main, metadata_no_missing]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$15], dir0=[ASC])
+  LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[$19], prior_2020=[$20])
+    LogicalJoin(condition=[=($15, $21)], joinType=[inner])
+      LogicalTableScan(table=[[main, metadata_no_missing]])
+      LogicalProject(pdf_json_files=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            BindableTableScan(table=[[main, metadata_no_missing]], projects=[[15]], aliases=[[pdf_json_files]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$15], dir0=[ASC])
+  LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[$19], prior_2020=[$20])
+    LogicalJoin(condition=[=($15, $21)], joinType=[inner])
+      LogicalTableScan(table=[[main, metadata_no_missing]])
+      LogicalProject(pdf_json_files=[$0])
+        LogicalFilter(condition=[=($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            LogicalProject(pdf_json_files=[$15])
+              LogicalTableScan(table=[[main, metadata_no_missing]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$15], dir0=[ASC])
+  LogicalProject(cord_uid=[$0], sha=[$1], source_x=[$2], title=[$3], doi=[$4], pmcid=[$5], pubmed_id=[$6], license=[$7], abstract=[$8], publish_time=[$9], authors=[$10], journal=[$11], mag_id=[$12], who_covidence_id=[$13], arxiv_id=[$14], pdf_json_files=[$15], pmc_json_files=[$16], url=[$17], s2_id=[$18], year_published=[$19], prior_2020=[$20])
+    LogicalJoin(condition=[=($15, $21)], joinType=[inner])
+      LogicalTableScan(table=[[main, metadata_no_missing]])
+      LogicalProject(pdf_json_files=[$0])
+        LogicalFilter(condition=[=($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            BindableTableScan(table=[[main, metadata_no_missing]], projects=[[15]], aliases=[[pdf_json_files]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$0], dir0=[ASC], fetch=[10])
+  LogicalProject(title=[$3], doi=[$4], abstract=[$8], authors=[$10], journal=[$11], year_published=[$19])
+    LogicalJoin(condition=[=($3, $21)], joinType=[inner])
+      LogicalTableScan(table=[[main, metadata_json_clean]])
+      LogicalProject(title=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            LogicalProject(title=[$3])
+              LogicalTableScan(table=[[main, metadata_json_clean]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$0], dir0=[ASC], fetch=[10])
+  LogicalProject(title=[$0], doi=[$1], abstract=[$2], authors=[$3], journal=[$4], year_published=[$5])
+    LogicalJoin(condition=[=($0, $6)], joinType=[inner])
+      BindableTableScan(table=[[main, metadata_json_clean]], projects=[[3, 4, 8, 10, 11, 19]], aliases=[[title, doi, abstract, authors, journal, year_published]])
+      LogicalProject(title=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            BindableTableScan(table=[[main, metadata_json_clean]], projects=[[3]], aliases=[[title]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$0], dir0=[ASC], fetch=[10])
+  LogicalProject(title=[$3], doi=[$4], abstract=[$8], authors=[$10], journal=[$11], year_published=[$19])
+    LogicalJoin(condition=[=($3, $21)], joinType=[inner])
+      LogicalTableScan(table=[[main, metadata_json_clean]])
+      LogicalProject(title=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            LogicalProject(title=[$3])
+              LogicalTableScan(table=[[main, metadata_json_clean]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$0], dir0=[ASC], fetch=[10])
+  LogicalProject(title=[$0], doi=[$1], abstract=[$2], authors=[$3], journal=[$4], year_published=[$5])
+    LogicalJoin(condition=[=($0, $6)], joinType=[inner])
+      BindableTableScan(table=[[main, metadata_json_clean]], projects=[[3, 4, 8, 10, 11, 19]], aliases=[[title, doi, abstract, authors, journal, year_published]])
+      LogicalProject(title=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            BindableTableScan(table=[[main, metadata_json_clean]], projects=[[3]], aliases=[[title]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$0], dir0=[ASC], fetch=[10])
+  LogicalProject(title=[$3], doi=[$4], abstract=[$8], authors=[$10], journal=[$11], year_published=[$19])
+    LogicalJoin(condition=[=($3, $21)], joinType=[inner])
+      LogicalTableScan(table=[[main, metadata_json_clean]])
+      LogicalProject(title=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            LogicalProject(title=[$3])
+              LogicalTableScan(table=[[main, metadata_json_clean]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$0], dir0=[ASC], fetch=[10])
+  LogicalProject(title=[$0], doi=[$1], abstract=[$2], authors=[$3], journal=[$4], year_published=[$5])
+    LogicalJoin(condition=[=($0, $6)], joinType=[inner])
+      BindableTableScan(table=[[main, metadata_json_clean]], projects=[[3, 4, 8, 10, 11, 19]], aliases=[[title, doi, abstract, authors, journal, year_published]])
+      LogicalProject(title=[$0])
+        LogicalFilter(condition=[>($1, 1)])
+          LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+            BindableTableScan(table=[[main, metadata_json_clean]], projects=[[3]], aliases=[[title]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(title=[$0])
+  LogicalFilter(condition=[>($1, 1)])
+    LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+      LogicalProject(title=[$3])
+        LogicalTableScan(table=[[main, metadata_title_clean]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(title=[$0])
+  LogicalFilter(condition=[>($1, 1)])
+    LogicalAggregate(group=[{0}], agg#0=[COUNT()])
+      BindableTableScan(table=[[main, metadata_title_clean]], projects=[[3]], aliases=[[title]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(meta_pdf_json=[$15], folder_pdf_json=[$21], meta_pdf_json_missing=[CASE(IS NULL($15), 1, 0)], folder_pdf_json_missing=[CASE(IS NULL($21), 1, 0)])
+  LogicalJoin(condition=[=($15, $21)], joinType=[full])
+    LogicalTableScan(table=[[main, metadata_title_clean]])
+    LogicalTableScan(table=[[main, files]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(meta_pdf_json=[$0], folder_pdf_json=[$1], meta_pdf_json_missing=[CASE(IS NULL($0), 1, 0)], folder_pdf_json_missing=[CASE(IS NULL($1), 1, 0)])
+  LogicalJoin(condition=[=($0, $1)], joinType=[full])
+    BindableTableScan(table=[[main, metadata_title_clean]], projects=[[15]], aliases=[[pdf_json_files]])
+    LogicalTableScan(table=[[main, files]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalAggregate(group=[{0, 1}], CNT=[COUNT()])
+  LogicalProject(meta_pdf_json_missing=[$2], folder_pdf_json_missing=[$3])
+    LogicalTableScan(table=[[main, pdf_files_meta]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalAggregate(group=[{0, 1}], CNT=[COUNT()])
+  BindableTableScan(table=[[main, pdf_files_meta]], projects=[[2, 3]], aliases=[[meta_pdf_json_missing, folder_pdf_json_missing]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(meta_pdf_json=[$15], folder_pdf_json=[$21], meta_pdf_json_missing=[CASE(IS NULL($15), 1, 0)], folder_pdf_json_missing=[CASE(IS NULL($21), 1, 0)])
+  LogicalJoin(condition=[=($15, $21)], joinType=[full])
+    LogicalTableScan(table=[[main, metadata_title_clean]])
+    LogicalTableScan(table=[[main, files]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(meta_pdf_json=[$0], folder_pdf_json=[$1], meta_pdf_json_missing=[CASE(IS NULL($0), 1, 0)], folder_pdf_json_missing=[CASE(IS NULL($1), 1, 0)])
+  LogicalJoin(condition=[=($0, $1)], joinType=[full])
+    BindableTableScan(table=[[main, metadata_title_clean]], projects=[[15]], aliases=[[pdf_json_files]])
+    LogicalTableScan(table=[[main, files]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalAggregate(group=[{0, 1}], CNT=[COUNT()])
+  LogicalProject(meta_pdf_json_missing=[$2], folder_pdf_json_missing=[$3])
+    LogicalTableScan(table=[[main, pdf_files_meta]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalAggregate(group=[{0, 1}], CNT=[COUNT()])
+  BindableTableScan(table=[[main, pdf_files_meta]], projects=[[2, 3]], aliases=[[meta_pdf_json_missing, folder_pdf_json_missing]])
+
