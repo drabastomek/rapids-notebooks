@@ -1,0 +1,173 @@
+2020-09-22 05:39:50,610|0|INFO|||"Worker IP: 127.0.0.1   Port: 23029"||||||
+2020-09-22 05:40:21,579|0|INFO|||"create_table start for test"||||||
+2020-09-22 05:40:41,033|0|INFO|||"create_table start for test"||||||
+2020-09-22 05:41:01,750|0|INFO|||"Worker IP: 127.0.0.1   Port: 10168"||||||
+2020-09-22 05:41:04,331|0|INFO|||"create_table start for test"||||||
+2020-09-22 05:42:08,303|0|INFO|||"Worker IP: 127.0.0.1   Port: 11050"||||||
+2020-09-22 05:42:09,800|0|INFO|||"create_table start for test"||||||
+2020-09-22 05:42:50,452|0|INFO|||"create_table start for test"||||||
+2020-09-22 05:43:16,610|0|INFO|||"create_table start for test"||||||
+2020-09-22 05:43:47,793|0|INFO|||"create_table start for test"||||||
+2020-09-22 05:43:59,080|0|INFO|||"create_table start for test"||||||
+2020-09-22 05:45:37,112|0|INFO|||"Worker IP: 127.0.0.1   Port: 26172"||||||
+2020-09-22 05:47:19,716|0|INFO|||"create_table start for test"||||||
+2020-09-22 05:47:19,897|0|INFO|||"init"||||||
+2020-09-22 05:47:46,614|0|INFO|||"Worker IP: 127.0.0.1   Port: 16819"||||||
+2020-09-22 05:48:02,482|0|INFO|||"Worker IP: 127.0.0.1   Port: 16204"||||||
+2020-09-22 05:48:30,738|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-22 05:48:30,919|0|INFO|||"init"||||||
+2020-09-22 05:48:55,510|0|INFO|||"Worker IP: 127.0.0.1   Port: 12479"||||||
+2020-09-22 05:48:58,220|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-22 05:48:58,371|0|INFO|||"init"||||||
+2020-09-23 04:20:31,068|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:20:31,068|0|ERROR|||"ERROR: When using 'partitions' without a Hive cursor,
+                     you also need to set 'partitions_schema' which should be
+                     a list of tuples of the column name and column type of
+                     the form partitions_schema=
+                     [('col_nameA','int32','col_nameB','str')]"||||||
+2020-09-23 04:20:54,777|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:23:33,735|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:24:09,047|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:24:55,571|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:25:01,718|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:25:16,691|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:25:44,514|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:26:20,624|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:27:13,374|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:28:15,371|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:28:18,448|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:28:22,480|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:28:24,270|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:29:20,055|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:29:51,555|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:30:14,135|0|INFO|||"Worker IP: 127.0.0.1   Port: 20082"||||||
+2020-09-23 04:30:17,626|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:30:24,376|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:30:26,971|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:30:35,656|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:30:35,772|0|INFO|||"init"||||||
+2020-09-23 04:31:26,741|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:31:29,750|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:31:45,883|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:32:04,111|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:32:34,679|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:32:54,223|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:32:54,223|0|ERROR|||"ERROR: When using 'partitions' without a Hive cursor,
+                     you also need to set 'partitions_schema' which should be
+                     a list of tuples of the column name and column type of
+                     the form partitions_schema=
+                     [('col_nameA','int32','col_nameB','str')]"||||||
+2020-09-23 04:32:57,877|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:33:11,947|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:33:11,948|0|ERROR|||"ERROR: 'partitions_schema' was defined, but 'partitions' was not. The parameter 'partitions_schema' is only to be used when defining 'partitions'"||||||
+2020-09-23 04:33:19,094|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:37:00,238|0|INFO|||"create_table start for parking_trans"||||||
+2020-09-23 04:44:26,057|0|INFO|||"Worker IP: 127.0.0.1   Port: 11320"||||||
+2020-09-23 04:44:32,242|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-23 04:44:32,367|0|INFO|||"init"||||||
+2020-09-23 04:46:16,852|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-23 04:46:16,949|0|INFO|||"create_table start for parking_locations"||||||
+2020-09-23 04:58:39,572|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-23 05:16:36,857|0|INFO|||"Worker IP: 127.0.0.1   Port: 15799"||||||
+2020-09-23 05:16:38,219|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-23 05:16:38,358|0|INFO|||"init"||||||
+2020-09-23 05:16:38,363|0|INFO|||"create_table start for parking_locations"||||||
+2020-09-23 05:16:47,991|0|INFO|||"Worker IP: 127.0.0.1   Port: 19381"||||||
+2020-09-23 05:16:51,955|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-23 05:16:52,085|0|INFO|||"init"||||||
+2020-09-23 05:16:52,091|0|INFO|||"create_table start for parking_locations"||||||
+2020-09-23 05:16:56,975|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-23 05:21:30,539|0|INFO|||"Worker IP: 127.0.0.1   Port: 15612"||||||
+2020-09-23 05:21:33,458|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-23 05:21:33,607|0|INFO|||"init"||||||
+2020-09-23 05:21:33,613|0|INFO|||"create_table start for parking_locations"||||||
+2020-09-23 05:21:56,575|0|INFO|||"Worker IP: 127.0.0.1   Port: 16721"||||||
+2020-09-23 05:21:57,934|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-23 05:21:58,063|0|INFO|||"init"||||||
+2020-09-23 05:21:58,069|0|INFO|||"create_table start for parking_locations"||||||
+2020-09-23 05:22:47,030|0|INFO|||"Worker IP: 127.0.0.1   Port: 24282"||||||
+2020-09-23 05:22:48,387|0|INFO|||"create_table start for parking_transactions"||||||
+2020-09-23 05:22:48,513|0|INFO|||"init"||||||
+2020-09-23 05:22:48,518|0|INFO|||"create_table start for parking_locations"||||||
+2020-10-01 17:34:59,838|0|INFO|||"create_table start for parking_transactions"||||||
+2020-10-01 17:34:59,842|0|INFO|||"create_table start for parking_locations"||||||
+2020-10-01 17:35:02,415|0|INFO|||"Worker IP: 127.0.0.1   Port: 10433"||||||
+2020-10-01 17:36:03,129|0|INFO|||"create_table start for parking_transactions"||||||
+2020-10-01 17:36:03,219|0|INFO|||"create_table start for parking_locations"||||||
+2020-10-01 17:44:02,385|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:44:15,583|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:44:45,901|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:45:01,567|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:45:07,824|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:45:10,591|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:45:18,846|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:45:24,735|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:46:08,852|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:46:19,368|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:46:25,329|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:46:34,166|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:46:46,447|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:47:17,842|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:48:33,970|0|INFO|||"create_table start for temp"||||||
+2020-10-01 17:48:38,714|0|INFO|||"create_table start for temp"||||||
+2020-10-01 18:37:05,815|0|INFO|||"create_table start for parking_transactions"||||||
+2020-10-01 18:37:12,241|0|INFO|||"create_table start for temp"||||||
+2020-10-01 20:00:17,218|0|INFO|||"Directory already exists"||||||
+2020-10-01 20:00:17,236|0|INFO|||"Directory already exists"||||||
+2020-10-01 20:00:17,252|0|INFO|||"Worker IP: 127.0.0.1   Port: 16991"||||||
+2020-10-01 20:00:30,496|0|INFO|||"create_table start for parking_transactions"||||||
+2020-10-01 20:00:40,130|0|INFO|||"create_table start for parking_transactions"||||||
+2020-10-01 20:00:57,557|0|INFO|||"create_table start for parking_transactions"||||||
+2020-10-01 20:01:03,282|0|INFO|||"create_table start for parking_transactions"||||||
+2020-10-01 20:02:16,620|0|INFO|||"create_table start for parking_transactions_dask"||||||
+2020-10-06 23:38:37,246|0|INFO|||"add pending dealloc: module_unload ? bytes"||||||
+2020-11-04 07:29:04,930|0|INFO|||"Worker IP: 127.0.0.1   Port: 16072"||||||
+2020-11-08 22:27:39,666|0|INFO|||"Worker IP: 127.0.0.1   Port: 15939"||||||
+2020-11-08 22:27:42,926|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 22:27:42,982|0|INFO|||"init"||||||
+2020-11-08 22:27:42,988|0|INFO|||"create_table start for parking_locations"||||||
+2020-11-08 22:27:50,276|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 22:47:46,087|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 22:48:41,673|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 22:53:58,415|0|INFO|||"Worker IP: 127.0.0.1   Port: 12831"||||||
+2020-11-08 22:53:59,800|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 22:53:59,846|0|INFO|||"init"||||||
+2020-11-08 22:53:59,851|0|INFO|||"create_table start for parking_locations"||||||
+2020-11-08 23:18:44,376|0|INFO|||"create_table start for parking_transactions_agg"||||||
+2020-11-08 23:25:57,546|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 23:26:02,509|0|INFO|||"create_table start for parking_transactions_agg"||||||
+2020-11-08 23:29:14,380|0|INFO|||"Worker IP: 127.0.0.1   Port: 28789"||||||
+2020-11-08 23:29:15,757|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 23:29:15,809|0|INFO|||"init"||||||
+2020-11-08 23:29:15,815|0|INFO|||"create_table start for parking_locations"||||||
+2020-11-08 23:29:20,198|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 23:29:24,663|0|INFO|||"create_table start for parking_transactions_agg"||||||
+2020-11-08 23:34:27,354|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 23:35:00,184|0|INFO|||"Worker IP: 127.0.0.1   Port: 11780"||||||
+2020-11-08 23:35:01,564|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 23:35:01,607|0|INFO|||"init"||||||
+2020-11-08 23:35:01,612|0|INFO|||"create_table start for parking_locations"||||||
+2020-11-08 23:35:09,237|0|INFO|||"create_table start for parking_transactions"||||||
+2020-11-08 23:38:21,369|0|INFO|||"Worker IP: 127.0.0.1   Port: 12232"||||||
+2020-11-08 23:38:38,188|0|INFO|||"Worker IP: 127.0.0.1   Port: 31971"||||||
+2020-11-09 00:03:04,365|0|INFO|||"Worker IP: 127.0.0.1   Port: 15813"||||||
+2020-11-09 01:41:29,084|0|INFO|||"Worker IP: 127.0.0.1   Port: 24110"||||||
+2020-11-09 02:17:57,147|0|INFO|||"Worker IP: 127.0.0.1   Port: 16910"||||||
+2020-11-09 02:53:51,591|0|INFO|||"Training on tcp://127.0.0.1:39561"||||||
+2020-11-09 02:57:13,247|0|INFO|||"Training on tcp://127.0.0.1:39561"||||||
+2020-11-09 03:06:29,276|0|INFO|||"Worker IP: 127.0.0.1   Port: 15911"||||||
+2020-11-09 03:10:27,658|0|INFO|||"Worker IP: 127.0.0.1   Port: 18894"||||||
+2020-11-09 03:13:29,275|0|INFO|||"Worker IP: 127.0.0.1   Port: 23477"||||||
+2020-11-09 03:17:51,756|0|INFO|||"Worker IP: 127.0.0.1   Port: 15431"||||||
+2020-11-09 03:20:00,346|0|INFO|||"Worker IP: 127.0.0.1   Port: 11927"||||||
+2020-11-09 03:20:19,039|0|INFO|||"Worker IP: 127.0.0.1   Port: 20723"||||||
+2020-11-09 03:23:49,578|0|INFO|||"Worker IP: 127.0.0.1   Port: 15717"||||||
+2020-11-09 03:25:43,007|0|INFO|||"Worker IP: 127.0.0.1   Port: 10726"||||||
+2020-11-09 03:32:52,228|0|INFO|||"Worker IP: 127.0.0.1   Port: 31784"||||||
+2020-11-09 03:35:53,142|0|INFO|||"Worker IP: 127.0.0.1   Port: 31643"||||||
+2020-11-09 03:43:15,270|0|INFO|||"Worker IP: 127.0.0.1   Port: 12661"||||||
+2020-11-09 03:43:52,193|0|INFO|||"Worker IP: 127.0.0.1   Port: 16149"||||||
+2020-11-09 04:42:54,586|0|INFO|||"Worker IP: 127.0.0.1   Port: 19765"||||||
+2020-11-09 05:11:37,435|0|INFO|||"Worker IP: 127.0.0.1   Port: 22338"||||||
+2020-11-09 05:11:40,452|0|INFO|||"Worker IP: 127.0.0.1   Port: 16881"||||||
+2020-11-09 05:59:44,147|0|INFO|||"Worker IP: 127.0.0.1   Port: 25628"||||||

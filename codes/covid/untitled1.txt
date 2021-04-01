@@ -1,0 +1,22 @@
+Converts from a unicode string to a list of tokens
+(represented as Unicode strings).
+
+This tokenizer has the following desirable properties:
+ - It is invertible.
+ - Alphanumeric characters are broken away from non-alphanumeric characters.
+ - A single space between words does not produce an extra token.
+ - The full Unicode punctuation and separator set is recognized.
+
+The tokenization algorithm is as follows:
+
+1.  Split the text into a list of tokens, splitting at every boundary of an
+    alphanumeric character and a non-alphanumeric character.  This produces
+    a list which alternates between "alphanumeric tokens"
+    (strings of alphanumeric characters) and "non-alphanumeric tokens"
+    (strings of non-alphanumeric characters).
+
+2.  Remove every token consisting of a single space, unless it is
+    the very first or very last token in the list.  These tokens are now
+    implied by the fact that there are two adjacent alphanumeric tokens.
+    
+"Dude - that's so cool."

@@ -1,0 +1,143 @@
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(SourceElementKey=[$0], BlockfaceName=[$1], SideOfStreet=[$2], ParkingTimeLimitCategory=[$3], ParkingSpaceCount=[$4], PaidParkingArea=[$5], PaidParkingSubArea=[$6], ParkingCategory=[$7], Location=[$8])
+  LogicalTableScan(table=[[main, parking_locations]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalTableScan(table=[[main, parking_locations]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(OccupancyDateTime=[$0], PaidOccupancy=[$1], SourceElementKey=[$2], dow=[$3], time_prior_1h=[+($0, *(3600000:INTERVAL HOUR, -1))], time_prior_1d=[+($0, *(86400000:INTERVAL DAY, -1))], time_prior_7d=[+($0, *(86400000:INTERVAL DAY, -7))])
+  LogicalFilter(condition=[>=($0, CAST('2019-06-01'):TIMESTAMP(0) NOT NULL)])
+    LogicalTableScan(table=[[main, parking_transactions]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(OccupancyDateTime=[$0], PaidOccupancy=[$1], SourceElementKey=[$2], dow=[$3], time_prior_1h=[+($0, -3600000:INTERVAL HOUR)], time_prior_1d=[+($0, -86400000:INTERVAL DAY)], time_prior_7d=[+($0, -604800000:INTERVAL DAY)])
+  BindableTableScan(table=[[main, parking_transactions]], filters=[[>=($0, 2019-06-01 00:00:00)]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalAggregate(group=[{0, 1, 2, 3, 4}], average_occupancy=[AVG($5)])
+  LogicalProject(SourceElementKey=[$2], transaction_year=[EXTRACT(FLAG(YEAR), $0)], transaction_month=[EXTRACT(FLAG(MONTH), $0)], transaction_day=[EXTRACT(FLAG(DAY), $0)], transaction_hour=[EXTRACT(FLAG(HOUR), $0)], $f5=[CAST($1):FLOAT])
+    LogicalTableScan(table=[[main, parking_transactions]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[/($5, $6)])
+  LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], $f5=[CASE(=($6, 0), null:FLOAT, $5)], $f6=[$6])
+    LogicalAggregate(group=[{0, 1, 2, 3, 4}], agg#0=[$SUM0($5)], agg#1=[COUNT($5)])
+      LogicalProject(SourceElementKey=[$0], transaction_year=[EXTRACT(FLAG(YEAR), $1)], transaction_month=[EXTRACT(FLAG(MONTH), $1)], transaction_day=[EXTRACT(FLAG(DAY), $1)], transaction_hour=[EXTRACT(FLAG(HOUR), $1)], $f5=[CAST($2):FLOAT])
+        BindableTableScan(table=[[main, parking_transactions]], projects=[[2, 0, 1]], aliases=[[SourceElementKey, transaction_year, transaction_month, transaction_day, transaction_hour, $f5]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(SourceElementKey=[$0], Label=[$1], OccupancyDateTime=[$2], AvgOccupancy_prior_1h=[$3], AvgOccupancy_prior_1d=[$7], AvgOccupancy_prior_7d=[$11])
+  LogicalJoin(condition=[AND(=($0, $8), =($1, $9), =($2, $10))], joinType=[left])
+    LogicalJoin(condition=[AND(=($0, $4), =($1, $5), =($2, $6))], joinType=[left])
+      LogicalProject(SourceElementKey=[$0], Label=[$1], OccupancyDateTime=[$2], AvgOccupancy_prior_1h=[$12])
+        LogicalJoin(condition=[AND(=($0, $7), =($3, $13), =($4, $14), =($5, $15), =($6, $16))], joinType=[left])
+          LogicalProject(SourceElementKey=[$2], PaidOccupancy=[$1], OccupancyDateTime=[$0], transaction_year=[EXTRACT(FLAG(YEAR), $4)], transaction_month=[EXTRACT(FLAG(MONTH), $4)], transaction_day=[EXTRACT(FLAG(DAY), $4)], transaction_hour=[EXTRACT(FLAG(HOUR), $4)])
+            LogicalTableScan(table=[[main, parking_transactions]])
+          LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+            LogicalTableScan(table=[[main, parking_transactions_agg]])
+      LogicalProject(SourceElementKey=[$0], Label=[$1], OccupancyDateTime=[$2], AvgOccupancy_prior_1d=[$12])
+        LogicalJoin(condition=[AND(=($0, $7), =($3, $13), =($4, $14), =($5, $15), =($6, $16))], joinType=[left])
+          LogicalProject(SourceElementKey=[$2], PaidOccupancy=[$1], OccupancyDateTime=[$0], transaction_year=[EXTRACT(FLAG(YEAR), $5)], transaction_month=[EXTRACT(FLAG(MONTH), $5)], transaction_day=[EXTRACT(FLAG(DAY), $5)], transaction_hour=[EXTRACT(FLAG(HOUR), $5)])
+            LogicalTableScan(table=[[main, parking_transactions]])
+          LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+            LogicalTableScan(table=[[main, parking_transactions_agg]])
+    LogicalProject(SourceElementKey=[$0], Label=[$1], OccupancyDateTime=[$2], AvgOccupancy_prior_7d=[$12])
+      LogicalJoin(condition=[AND(=($0, $7), =($3, $13), =($4, $14), =($5, $15), =($6, $16))], joinType=[left])
+        LogicalProject(SourceElementKey=[$2], PaidOccupancy=[$1], OccupancyDateTime=[$0], transaction_year=[EXTRACT(FLAG(YEAR), $6)], transaction_month=[EXTRACT(FLAG(MONTH), $6)], transaction_day=[EXTRACT(FLAG(DAY), $6)], transaction_hour=[EXTRACT(FLAG(HOUR), $6)])
+          LogicalTableScan(table=[[main, parking_transactions]])
+        LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+          LogicalTableScan(table=[[main, parking_transactions_agg]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(SourceElementKey=[$0], Label=[$1], OccupancyDateTime=[$2], AvgOccupancy_prior_1h=[$3], AvgOccupancy_prior_1d=[$4], AvgOccupancy_prior_7d=[$8])
+  LogicalJoin(condition=[AND(=($0, $5), =($1, $6), =($2, $7))], joinType=[left])
+    LogicalProject(SourceElementKey=[$0], Label=[$1], OccupancyDateTime=[$2], AvgOccupancy_prior_1h=[$3], AvgOccupancy_prior_1d=[$7])
+      LogicalJoin(condition=[AND(=($0, $4), =($1, $5), =($2, $6))], joinType=[left])
+        LogicalProject(SourceElementKey=[$0], Label=[$1], OccupancyDateTime=[$2], AvgOccupancy_prior_1h=[$8])
+          LogicalJoin(condition=[AND(=($0, $7), =($3, $9), =($4, $10), =($5, $11), =($6, $12))], joinType=[left])
+            LogicalProject(SourceElementKey=[$0], PaidOccupancy=[$1], OccupancyDateTime=[$2], transaction_year=[EXTRACT(FLAG(YEAR), $3)], transaction_month=[EXTRACT(FLAG(MONTH), $3)], transaction_day=[EXTRACT(FLAG(DAY), $3)], transaction_hour=[EXTRACT(FLAG(HOUR), $3)])
+              BindableTableScan(table=[[main, parking_transactions]], projects=[[2, 1, 0, 4]], aliases=[[SourceElementKey, PaidOccupancy, OccupancyDateTime, transaction_year, transaction_month, transaction_day, transaction_hour]])
+            LogicalProject(SourceElementKey=[$0], average_occupancy=[$5], transaction_year0=[$6], transaction_month0=[$7], transaction_day0=[$8], transaction_hour0=[$9])
+              LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+                BindableTableScan(table=[[main, parking_transactions_agg]], aliases=[[SourceElementKey, transaction_year, transaction_month, transaction_day, transaction_hour, average_occupancy, transaction_year0, transaction_month0, transaction_day0, transaction_hour0]])
+        LogicalProject(SourceElementKey=[$0], Label=[$1], OccupancyDateTime=[$2], AvgOccupancy_prior_1d=[$8])
+          LogicalJoin(condition=[AND(=($0, $7), =($3, $9), =($4, $10), =($5, $11), =($6, $12))], joinType=[left])
+            LogicalProject(SourceElementKey=[$0], PaidOccupancy=[$1], OccupancyDateTime=[$2], transaction_year=[EXTRACT(FLAG(YEAR), $3)], transaction_month=[EXTRACT(FLAG(MONTH), $3)], transaction_day=[EXTRACT(FLAG(DAY), $3)], transaction_hour=[EXTRACT(FLAG(HOUR), $3)])
+              BindableTableScan(table=[[main, parking_transactions]], projects=[[2, 1, 0, 5]], aliases=[[SourceElementKey, PaidOccupancy, OccupancyDateTime, transaction_year, transaction_month, transaction_day, transaction_hour]])
+            LogicalProject(SourceElementKey=[$0], average_occupancy=[$5], transaction_year0=[$6], transaction_month0=[$7], transaction_day0=[$8], transaction_hour0=[$9])
+              LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+                BindableTableScan(table=[[main, parking_transactions_agg]], aliases=[[SourceElementKey, transaction_year, transaction_month, transaction_day, transaction_hour, average_occupancy, transaction_year0, transaction_month0, transaction_day0, transaction_hour0]])
+    LogicalProject(SourceElementKey=[$0], Label=[$1], OccupancyDateTime=[$2], AvgOccupancy_prior_7d=[$8])
+      LogicalJoin(condition=[AND(=($0, $7), =($3, $9), =($4, $10), =($5, $11), =($6, $12))], joinType=[left])
+        LogicalProject(SourceElementKey=[$0], PaidOccupancy=[$1], OccupancyDateTime=[$2], transaction_year=[EXTRACT(FLAG(YEAR), $3)], transaction_month=[EXTRACT(FLAG(MONTH), $3)], transaction_day=[EXTRACT(FLAG(DAY), $3)], transaction_hour=[EXTRACT(FLAG(HOUR), $3)])
+          BindableTableScan(table=[[main, parking_transactions]], projects=[[2, 1, 0, 6]], aliases=[[SourceElementKey, PaidOccupancy, OccupancyDateTime, transaction_year, transaction_month, transaction_day, transaction_hour]])
+        LogicalProject(SourceElementKey=[$0], average_occupancy=[$5], transaction_year0=[$6], transaction_month0=[$7], transaction_day0=[$8], transaction_hour0=[$9])
+          LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+            BindableTableScan(table=[[main, parking_transactions_agg]], aliases=[[SourceElementKey, transaction_year, transaction_month, transaction_day, transaction_hour, average_occupancy, transaction_year0, transaction_month0, transaction_day0, transaction_hour0]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(OccupancyDateTime=[$0], PaidOccupancy=[$1], SourceElementKey=[$2], dow=[$3], time_prior_1h=[$4], time_prior_1d=[$5], time_prior_7d=[$6], transaction_year=[EXTRACT(FLAG(YEAR), $0)], transaction_month=[EXTRACT(FLAG(MONTH), $0)], transaction_day=[EXTRACT(FLAG(DAY), $0)], transaction_hour=[EXTRACT(FLAG(HOUR), $0)])
+  LogicalTableScan(table=[[main, parking_transactions]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(OccupancyDateTime=[$0], PaidOccupancy=[$1], SourceElementKey=[$2], dow=[$3], time_prior_1h=[$4], time_prior_1d=[$5], time_prior_7d=[$6], transaction_year=[EXTRACT(FLAG(YEAR), $0)], transaction_month=[EXTRACT(FLAG(MONTH), $0)], transaction_day=[EXTRACT(FLAG(DAY), $0)], transaction_hour=[EXTRACT(FLAG(HOUR), $0)])
+  BindableTableScan(table=[[main, parking_transactions]], aliases=[[OccupancyDateTime, PaidOccupancy, SourceElementKey, dow, time_prior_1h, time_prior_1d, time_prior_7d, transaction_year, transaction_month, transaction_day, transaction_hour]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalSort(sort0=[$0], dir0=[ASC])
+  LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], AvgOccupancy_prior_1h=[$2], AvgOccupancy_prior_1d=[$5], AvgOccupancy_prior_7d=[$8])
+    LogicalJoin(condition=[AND(=($0, $6), =($1, $7))], joinType=[left])
+      LogicalJoin(condition=[AND(=($0, $3), =($1, $4))], joinType=[left])
+        LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], AvgOccupancy_prior_1h=[$11])
+          LogicalJoin(condition=[AND(=($0, $6), =($2, $12), =($3, $13), =($4, $14), =($5, $15))], joinType=[left])
+            LogicalProject(SourceElementKey=[$6], OccupancyDateTime=[$7], transaction_year=[EXTRACT(FLAG(YEAR), $8)], transaction_month=[EXTRACT(FLAG(MONTH), $8)], transaction_day=[EXTRACT(FLAG(DAY), $8)], transaction_hour=[EXTRACT(FLAG(HOUR), $8)])
+              LogicalTableScan(table=[[main, inference]])
+            LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+              LogicalTableScan(table=[[main, parking_transactions_agg]])
+        LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], AvgOccupancy_prior_1d=[$11])
+          LogicalJoin(condition=[AND(=($0, $6), =($2, $12), =($3, $13), =($4, $14), =($5, $15))], joinType=[left])
+            LogicalProject(SourceElementKey=[$6], OccupancyDateTime=[$7], transaction_year=[EXTRACT(FLAG(YEAR), $9)], transaction_month=[EXTRACT(FLAG(MONTH), $9)], transaction_day=[EXTRACT(FLAG(DAY), $9)], transaction_hour=[EXTRACT(FLAG(HOUR), $9)])
+              LogicalTableScan(table=[[main, inference]])
+            LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+              LogicalTableScan(table=[[main, parking_transactions_agg]])
+      LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], AvgOccupancy_prior_7d=[$11])
+        LogicalJoin(condition=[AND(=($0, $6), =($2, $12), =($3, $13), =($4, $14), =($5, $15))], joinType=[left])
+          LogicalProject(SourceElementKey=[$6], OccupancyDateTime=[$7], transaction_year=[EXTRACT(FLAG(YEAR), $10)], transaction_month=[EXTRACT(FLAG(MONTH), $10)], transaction_day=[EXTRACT(FLAG(DAY), $10)], transaction_hour=[EXTRACT(FLAG(HOUR), $10)])
+            LogicalTableScan(table=[[main, inference]])
+          LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+            LogicalTableScan(table=[[main, parking_transactions_agg]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalSort(sort0=[$0], dir0=[ASC])
+  LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], AvgOccupancy_prior_1h=[$2], AvgOccupancy_prior_1d=[$3], AvgOccupancy_prior_7d=[$6])
+    LogicalJoin(condition=[AND(=($0, $4), =($1, $5))], joinType=[left])
+      LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], AvgOccupancy_prior_1h=[$2], AvgOccupancy_prior_1d=[$5])
+        LogicalJoin(condition=[AND(=($0, $3), =($1, $4))], joinType=[left])
+          LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], AvgOccupancy_prior_1h=[$7])
+            LogicalJoin(condition=[AND(=($0, $6), =($2, $8), =($3, $9), =($4, $10), =($5, $11))], joinType=[left])
+              LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], transaction_year=[EXTRACT(FLAG(YEAR), $2)], transaction_month=[EXTRACT(FLAG(MONTH), $2)], transaction_day=[EXTRACT(FLAG(DAY), $2)], transaction_hour=[EXTRACT(FLAG(HOUR), $2)])
+                BindableTableScan(table=[[main, inference]], projects=[[6, 7, 8]], aliases=[[SourceElementKey, OccupancyDateTime, transaction_year, transaction_month, transaction_day, transaction_hour]])
+              LogicalProject(SourceElementKey=[$0], average_occupancy=[$5], transaction_year0=[$6], transaction_month0=[$7], transaction_day0=[$8], transaction_hour0=[$9])
+                LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+                  BindableTableScan(table=[[main, parking_transactions_agg]], aliases=[[SourceElementKey, transaction_year, transaction_month, transaction_day, transaction_hour, average_occupancy, transaction_year0, transaction_month0, transaction_day0, transaction_hour0]])
+          LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], AvgOccupancy_prior_1d=[$7])
+            LogicalJoin(condition=[AND(=($0, $6), =($2, $8), =($3, $9), =($4, $10), =($5, $11))], joinType=[left])
+              LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], transaction_year=[EXTRACT(FLAG(YEAR), $2)], transaction_month=[EXTRACT(FLAG(MONTH), $2)], transaction_day=[EXTRACT(FLAG(DAY), $2)], transaction_hour=[EXTRACT(FLAG(HOUR), $2)])
+                BindableTableScan(table=[[main, inference]], projects=[[6, 7, 9]], aliases=[[SourceElementKey, OccupancyDateTime, transaction_year, transaction_month, transaction_day, transaction_hour]])
+              LogicalProject(SourceElementKey=[$0], average_occupancy=[$5], transaction_year0=[$6], transaction_month0=[$7], transaction_day0=[$8], transaction_hour0=[$9])
+                LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+                  BindableTableScan(table=[[main, parking_transactions_agg]], aliases=[[SourceElementKey, transaction_year, transaction_month, transaction_day, transaction_hour, average_occupancy, transaction_year0, transaction_month0, transaction_day0, transaction_hour0]])
+      LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], AvgOccupancy_prior_7d=[$7])
+        LogicalJoin(condition=[AND(=($0, $6), =($2, $8), =($3, $9), =($4, $10), =($5, $11))], joinType=[left])
+          LogicalProject(SourceElementKey=[$0], OccupancyDateTime=[$1], transaction_year=[EXTRACT(FLAG(YEAR), $2)], transaction_month=[EXTRACT(FLAG(MONTH), $2)], transaction_day=[EXTRACT(FLAG(DAY), $2)], transaction_hour=[EXTRACT(FLAG(HOUR), $2)])
+            BindableTableScan(table=[[main, inference]], projects=[[6, 7, 10]], aliases=[[SourceElementKey, OccupancyDateTime, transaction_year, transaction_month, transaction_day, transaction_hour]])
+          LogicalProject(SourceElementKey=[$0], average_occupancy=[$5], transaction_year0=[$6], transaction_month0=[$7], transaction_day0=[$8], transaction_hour0=[$9])
+            LogicalProject(SourceElementKey=[$0], transaction_year=[$1], transaction_month=[$2], transaction_day=[$3], transaction_hour=[$4], average_occupancy=[$5], transaction_year0=[CAST($1):BIGINT], transaction_month0=[CAST($2):BIGINT], transaction_day0=[CAST($3):BIGINT], transaction_hour0=[CAST($4):BIGINT])
+              BindableTableScan(table=[[main, parking_transactions_agg]], aliases=[[SourceElementKey, transaction_year, transaction_month, transaction_day, transaction_hour, average_occupancy, transaction_year0, transaction_month0, transaction_day0, transaction_hour0]])
+

@@ -1,0 +1,123 @@
+2020-09-09 05:22:53,554|0|INFO|||"Worker IP: 127.0.0.1   Port: 10954"||||||
+2020-09-09 05:22:53,938|0|INFO|||"create_table start for metadata"||||||
+2020-09-09 06:00:26,022|0|INFO|||"Worker IP: 127.0.0.1   Port: 20129"||||||
+2020-09-09 06:00:26,391|0|INFO|||"create_table start for metadata"||||||
+2020-09-09 06:07:43,020|0|INFO|||"Worker IP: 127.0.0.1   Port: 16893"||||||
+2020-09-09 06:08:01,923|0|INFO|||"Worker IP: 127.0.0.1   Port: 11905"||||||
+2020-09-09 06:08:02,272|0|INFO|||"create_table start for metadata"||||||
+2020-09-09 06:11:49,575|0|WARNING|||"Describe does not yet include StringColumns or DatetimeColumns."||||||
+2020-09-09 06:12:48,282|0|WARNING|||"Describe does not yet include StringColumns or DatetimeColumns."||||||
+2020-09-09 06:15:29,960|0|WARNING|||"Describe does not yet include StringColumns or DatetimeColumns."||||||
+2020-09-09 06:33:58,789|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-09 06:40:24,600|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 05:59:15,180|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 05:59:15,271|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 06:01:02,829|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 06:01:02,918|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 06:01:26,401|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 06:01:26,507|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 06:01:40,042|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 06:01:40,248|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 06:05:15,558|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 06:05:15,666|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 06:06:11,471|0|INFO|||"create_table start for metadata_no_missing"||||||
+2020-09-10 06:09:17,919|0|INFO|||"create_table start for metadata_no_missing"||||||
+2020-09-10 06:10:33,793|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 06:10:33,895|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 07:01:34,470|0|INFO|||"create_table start for metadata_json_clean"||||||
+2020-09-10 07:06:55,181|0|INFO|||"Worker IP: 127.0.0.1   Port: 23427"||||||
+2020-09-10 07:06:55,525|0|INFO|||"create_table start for metadata"||||||
+2020-09-10 07:06:59,919|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 07:07:00,134|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 07:07:02,821|0|INFO|||"create_table start for metadata_no_missing"||||||
+2020-09-10 07:07:03,674|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 07:07:03,803|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 07:07:10,045|0|INFO|||"create_table start for metadata_json_clean"||||||
+2020-09-10 07:11:44,629|0|INFO|||"Worker IP: 127.0.0.1   Port: 30670"||||||
+2020-09-10 07:11:44,973|0|INFO|||"create_table start for metadata"||||||
+2020-09-10 07:11:45,655|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 07:11:45,923|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 07:11:46,059|0|INFO|||"create_table start for metadata_no_missing"||||||
+2020-09-10 07:11:46,161|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 07:11:46,274|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 07:11:47,354|0|INFO|||"create_table start for metadata_json_clean"||||||
+2020-09-10 07:11:58,326|0|INFO|||"Worker IP: 127.0.0.1   Port: 29101"||||||
+2020-09-10 07:11:58,341|0|INFO|||"create_table start for metadata"||||||
+2020-09-10 07:11:59,435|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 07:11:59,571|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 07:12:00,822|0|INFO|||"create_table start for metadata_no_missing"||||||
+2020-09-10 07:12:01,106|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-10 07:12:01,234|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-10 07:12:04,519|0|INFO|||"create_table start for metadata_json_clean"||||||
+2020-09-10 07:15:57,817|0|INFO|||"create_table start for metadata_json_clean"||||||
+2020-09-10 07:17:17,465|0|INFO|||"create_table start for metadata_title_clean"||||||
+2020-09-10 07:17:41,176|0|INFO|||"create_table start for metadata_title_clean"||||||
+2020-09-13 23:52:33,141|0|INFO|||"Worker IP: 127.0.0.1   Port: 29255"||||||
+2020-09-13 23:52:33,144|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:24:27,968|0|INFO|||"Worker IP: 127.0.0.1   Port: 29563"||||||
+2020-09-14 00:24:28,308|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:25:13,237|0|INFO|||"Worker IP: 127.0.0.1   Port: 30914"||||||
+2020-09-14 00:25:13,246|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:26:00,983|0|INFO|||"Worker IP: 127.0.0.1   Port: 21296"||||||
+2020-09-14 00:26:00,993|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:38:58,248|0|INFO|||"Worker IP: 127.0.0.1   Port: 25140"||||||
+2020-09-14 00:38:58,562|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:39:04,339|0|INFO|||"init"||||||
+2020-09-14 00:41:17,722|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:42:14,134|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:44:22,944|0|INFO|||"Worker IP: 127.0.0.1   Port: 22627"||||||
+2020-09-14 00:44:22,948|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:44:36,099|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:44:46,312|0|INFO|||"create_table start for metadata"||||||
+2020-09-14 00:44:49,423|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-14 00:44:49,638|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-14 00:45:25,881|0|INFO|||"create_table start for metadata_no_missing"||||||
+2020-09-14 00:45:27,082|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-14 00:45:27,222|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-14 00:45:39,824|0|INFO|||"create_table start for metadata_json_clean"||||||
+2020-09-14 00:45:47,276|0|INFO|||"create_table start for metadata_title_clean"||||||
+2020-09-14 01:04:23,838|0|INFO|||"create_table start for files"||||||
+2020-09-14 01:06:44,692|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-14 01:06:49,575|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-14 01:07:29,742|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-14 01:07:39,803|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-14 01:08:12,279|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-14 01:08:15,747|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-14 01:09:22,872|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-14 01:10:24,420|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-14 01:21:22,323|0|INFO|||"create_table start for metadata_pdf_json_clean"||||||
+2020-09-14 01:22:48,635|0|INFO|||"create_table start for files"||||||
+2020-09-14 01:22:51,567|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-14 01:22:53,421|0|INFO|||"create_table start for metadata_pdf_json_clean"||||||
+2020-09-14 05:24:36,943|0|INFO|||"create_table start for metadata"||||||
+2020-09-15 05:10:40,166|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-15 05:10:40,258|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-15 05:12:06,521|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-15 05:12:06,809|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-15 05:14:10,814|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-15 05:14:11,121|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-15 05:14:38,382|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-15 05:14:38,474|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-15 05:24:27,484|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-15 05:24:27,657|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-15 05:33:06,857|0|INFO|||"create_table start for duplicates"||||||
+2020-09-15 05:34:28,187|0|INFO|||"add pending dealloc: module_unload ? bytes"||||||
+2020-09-15 05:34:43,942|0|INFO|||"Worker IP: 127.0.0.1   Port: 26274"||||||
+2020-09-15 05:34:44,265|0|INFO|||"create_table start for metadata"||||||
+2020-09-15 05:34:48,732|0|INFO|||"init"||||||
+2020-09-15 05:35:06,060|0|INFO|||"create_table start for metadata"||||||
+2020-09-15 05:35:15,454|0|INFO|||"create_table start for metadata"||||||
+2020-09-15 05:35:22,933|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-15 05:35:23,108|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-15 05:35:45,832|0|INFO|||"create_table start for metadata_no_missing"||||||
+2020-09-15 05:35:46,778|0|INFO|||"create_table start for missing_flags"||||||
+2020-09-15 05:35:46,921|0|INFO|||"create_table start for missing_summary"||||||
+2020-09-15 05:35:51,530|0|INFO|||"create_table start for duplicates"||||||
+2020-09-15 05:44:56,676|0|INFO|||"create_table start for metadata_json_clean"||||||
+2020-09-15 05:48:53,667|0|INFO|||"create_table start for files"||||||
+2020-09-15 05:48:59,880|0|INFO|||"create_table start for metadata_title_clean"||||||
+2020-09-15 05:49:01,156|0|INFO|||"create_table start for files"||||||
+2020-09-15 05:49:01,185|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-15 05:52:40,177|0|INFO|||"create_table start for files"||||||
+2020-09-15 05:52:40,205|0|INFO|||"create_table start for pdf_files_meta"||||||
+2020-09-16 04:35:46,877|0|INFO|||"add pending dealloc: module_unload ? bytes"||||||
